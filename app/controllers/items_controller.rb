@@ -7,6 +7,13 @@ class ItemsController < ApplicationController
 
     def create
         item = Item.new(item_params)
+        # byebug
+        if item.save
+            render json: item
+        else
+            render json: {error: "Couldn't be saved"}
+        end
+        # byebug
     end
 
 
