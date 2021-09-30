@@ -18,7 +18,12 @@ class ItemsController < ApplicationController
 
     def update
         item = Item.find_by_id(params[:id])
-        
+        if item.update(item_params)
+            render json: item
+        else
+            render json: {error: "Couldn't update your changes!"}
+        end
+
     end
 
     def destroy
