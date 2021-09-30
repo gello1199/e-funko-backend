@@ -16,6 +16,11 @@ class ItemsController < ApplicationController
         # byebug
     end
 
+    def update
+        item = Item.find_by_id(params[:id])
+        
+    end
+
     def destroy
         item = Item.find_by_id(params[:id])
         item.destroy
