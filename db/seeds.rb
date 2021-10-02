@@ -6,11 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-store1 = Store.find_or_create_by(name: "E-Funko", location: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone)
 
-cat1 = Category.find_or_create_by(name: "DC", store: store1)
-cat2 = Category.find_or_create_by(name: "Marvel", store: store1)
-cat3 = Category.find_or_create_by(name: "Harry Potter", store: store1)
+cat1 = Category.find_or_create_by(name: "DC")
+cat2 = Category.find_or_create_by(name: "Marvel")
+cat3 = Category.find_or_create_by(name: "Harry Potter")
 
 
 batman1 = Item.find_or_create_by(name: "Batman", price: Faker::Commerce.price, description: "The Dark Knight" , image: 'https://m.media-amazon.com/images/I/619Ju-Xr9bL._AC_SL1500_.jpg', category: cat1)

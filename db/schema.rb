@@ -17,10 +17,8 @@ ActiveRecord::Schema.define(version: 2021_09_23_155004) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.bigint "store_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["store_id"], name: "index_categories_on_store_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -35,14 +33,5 @@ ActiveRecord::Schema.define(version: 2021_09_23_155004) do
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
-  create_table "stores", force: :cascade do |t|
-    t.string "name"
-    t.string "location"
-    t.string "phone_number"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  add_foreign_key "categories", "stores"
   add_foreign_key "items", "categories"
 end

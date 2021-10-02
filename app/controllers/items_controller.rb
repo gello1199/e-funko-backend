@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
     end
 
     def create
+        # byebug
         item = Item.new(item_params)
         # byebug
         if item.save

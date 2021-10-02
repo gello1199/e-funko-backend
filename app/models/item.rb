@@ -4,6 +4,7 @@ class Item < ApplicationRecord
 
   def category_name=(cat_attributes)
     if !cat_attributes.blank?
+      # byebug
       self.category = Category.find_or_create_by(name: cat_attributes)
     end
   end
