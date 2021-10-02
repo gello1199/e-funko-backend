@@ -11,7 +11,8 @@ class ItemsController < ApplicationController
         if item.save
             render json: item
         else
-            render json: {error: "Couldn't be saved"}
+            # byebug
+            render json: {error: item.errors.full_messages}
         end
         # byebug
     end
@@ -36,7 +37,7 @@ class ItemsController < ApplicationController
     private
     
     def item_params
-        params.require(:item).permit(:name, :price, :description, :image, :category_id)
+        params.require(:item).permit(:name, :price, :description, :image, :category_id, :category_name)
     end
 
 end
