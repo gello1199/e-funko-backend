@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
         item = Item.find_by_id(params[:id])
         if item.update(item_params)
             render json: item
+            # converts model instances to json
         else
             render json: {error: "Couldn't update your changes!"}
         end
