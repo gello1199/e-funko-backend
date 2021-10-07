@@ -1,4 +1,4 @@
-# README
+# E-Funko
 
 E-Funko
 Welcome to the E-Funko app! This app creates an E-commerce shop where you can view funko-pop characters, edit existing items, delete and add new items. Each item will include a name, price, description and image. You can add a new item by using the hidden form that appears when the "add item" button is clicked. The app also has additional functionality that enlarges the image when a mouse hovers over the image and also a filter where the user can filter by category (i.e. all Marvel characters).
